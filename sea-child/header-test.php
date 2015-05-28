@@ -1,0 +1,6 @@
+<?php
+
+/*
+ * Header Name: Child
+ */
+?>
