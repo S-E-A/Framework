@@ -114,21 +114,21 @@ if ( ! function_exists( 'seaframework_classes_autoloader' ) ) {
             )
         );
 
+        $class = sprintf( 'classes/%s.php', strtolower( $path ) );
         $path = sprintf( '%s/classes/%s.php', untrailingslashit( SEA_FLOOR ), strtolower( $path ) );
         
         if ( file_exists( $path ) ) {
-            require_once $path;
+            locate_template( $class, true, true );
         }
 
     }
 }
 
 add_action( 'init', 'seaframework_customizer_include' );
-
 if ( ! function_exists( 'seaframework_customizer_include' ) ) {
     function seaframework_customizer_include() {
 
-        require_once( 'framework/theme_customizer.php' );
+        locate_template( 'framework/theme_customizer.php', true, true );
 
     }
 }
@@ -149,7 +149,7 @@ if ( ! function_exists( 'seaframework_setup' ) ) {
 
         add_action( 'customize_preview_init', 'seaframework_customizer_live_preview' );
 
-        require_once( 'framework/theme_shortcodes.php' );
+        locate_template( 'framework/theme_shortcodes.php', true, true );
 
     }
 

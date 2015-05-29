@@ -33,10 +33,10 @@ if ( $paged >= 2 || $page >= 2 )
     
     <?php wp_head(); ?>
     
-    <?php get_template_part( 'partials/customizer' ); ?>
+    <?php locate_template( 'partials/customizer', true, true ); ?>
     
 </head>
 
 <body <?php body_class(); ?>>
 
-    <?php get_template_part( 'header', get_theme_mod('header_version', 'default') ); ?>
+    <?php locate_template( 'header-' . get_theme_mod('header_version', 'default') . '.php', true, true ); ?>
