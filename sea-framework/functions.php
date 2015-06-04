@@ -20,8 +20,19 @@ add_action( 'login_head', 'seaframework_custom_login_logo' );
 if ( ! function_exists( 'seaframework_custom_login_logo' ) ) {
     function seaframework_custom_login_logo() {
         
+        if ( is_child_theme() && file_exists( get_stylesheet_directory() . '/images/login.png' ) ) {
+
+            $image_url = get_stylesheet_directory_uri() . '/images/login.png';
+
+        }
+        else {
+
+            $image_url = SEA_FLOOR_URI . '/images/login.png';
+
+        }
+
         _e( '<style type="text/css">
-        h1 a { background-image: url(' . SEA_FLOOR_URI . '/images/login.png) !important; background-size: 311px 100px !important;height: 100px !important; width: 311px !important; margin-bottom: 0 !important; padding-bottom: 0 !important; }
+        h1 a { background-image: url(' . $image_url . ') !important; background-size: 311px 100px !important;height: 100px !important; width: 311px !important; margin-bottom: 0 !important; padding-bottom: 0 !important; }
         .login form { margin-top: 10px !important; }
         </style>', 'seaframework' );
         
@@ -57,8 +68,9 @@ if ( ! function_exists( 'seaframework_change_howdy' ) ) {
             return $translated;
         }
 
+        $swap_howdy = apply_filters( 'seaframework_swap_howdy_text_with', 'Welcome' );
         if ( false !== strpos( $translated, 'Howdy' ) ) {
-            return str_replace( 'Howdy', 'Welcome', $translated );
+            return str_replace( 'Howdy', $swap_howdy, $translated );
         }
 
         return $translated;
