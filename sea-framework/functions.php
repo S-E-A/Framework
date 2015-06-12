@@ -163,6 +163,10 @@ if ( ! function_exists( 'seaframework_setup' ) ) {
 
         locate_template( 'framework/theme_shortcodes.php', true, true );
 
+        register_nav_menu( 'primary', __( 'Primary Navigation', 'seaframework' ) );
+
+        locate_template( 'framework/class-wp-bootstrap-navwalker.php', true, true );
+
     }
 
 }
