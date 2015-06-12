@@ -269,7 +269,7 @@ function seaframework_register_copyright_widget() {
     
 }
 
-require_once( 'framework/class-tgm-plugin-activation.php' );
+locate_template( 'framework/class-tgm-plugin-activation.php', true, true );
 
 add_action( 'tgmpa_register', 'seaframework_require_plugins' );
 function seaframework_require_plugins() {
