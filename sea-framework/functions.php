@@ -59,7 +59,7 @@ if ( ! function_exists( 'seaframework_login_logo_url_title' ) ) {
     }
 }
 
-add_filter('gettext', 'seaframework_change_howdy', 10, 3);
+add_filter( 'gettext', 'seaframework_change_howdy', 10, 3 );
 
 if ( ! function_exists( 'seaframework_change_howdy' ) ) {
     function seaframework_change_howdy($translated, $text, $domain) {
@@ -300,6 +300,8 @@ function seaframework_require_plugins() {
         
     );
     
+    $plugins = apply_filters( 'seaframework_alter_required_plugins', $plugins );
+
     /**
      * Array of configuration settings. Amend each line as needed.
      * If you want the default strings to be available under your own theme domain,
@@ -337,6 +339,8 @@ function seaframework_require_plugins() {
         )
     );
     
+    $config = apply_filters( 'seaframework_config_required_plugins', $config );
+
     tgmpa( $plugins, $config );
     
 }
