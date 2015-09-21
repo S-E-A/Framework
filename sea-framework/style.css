@@ -2,13 +2,13 @@
 Theme Name: S.E.A. Framework
 Theme URI: https://bitbucket.org/d4mation/s.e.a.-framework
 Author: Sam Rudloff, Eric Defore, and Akai Suddeth
-Author URI: http://www.getaos.com
+Author URI:
 Description: 
 Version: 0.1
 License: GNU General Public License
 License URI: license.txt
 Tags: 
-Text Domain:  seaframework
+Text Domain: seaframework
 */
 
 .header-theme-dark {
@@ -18,9 +18,9 @@ Text Domain:  seaframework
     position:relative;
     z-index:99999;  
     background: url(http://weekend-history.codio.io:3000/wordpress/wp-content/uploads/2015/04/sea-background.jpg) no-repeat bottom right fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 } 
 
